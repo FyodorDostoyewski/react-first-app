@@ -1,8 +1,13 @@
 import styles from './SearchForm.module.scss'
 import TextInput from '../TextInput/TextInput.js';
 import Button from '../Button/Button.js';
+import { useDispatch } from 'react-redux';
+
 
 const SearchForm = () => {
+  const dispatch = useDispatch();
+  dispatch({ type: 'UPDATE_SEARCHSTRING', payload: {} });
+
   return (
       <form className={styles.searchForm}>
           <TextInput placeholder="Search…" />
@@ -11,6 +16,6 @@ const SearchForm = () => {
           </Button>
       </form>
   );
-};
+}
 
   export default SearchForm;
