@@ -2,17 +2,25 @@ import styles from './SearchForm.module.scss'
 import TextInput from '../TextInput/TextInput.js';
 import Button from '../Button/Button.js';
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 
 
 const SearchForm = () => {
   const dispatch = useDispatch();
-  dispatch({ type: 'UPDATE_SEARCHSTRING', payload: {} });
+
+  const [searchForm, setSearchForm] = useState('');
+
+  const handleSubmit = eve => {
+    eve.preventDefault();
+    dispatch({ type: 'UPDATE_SEARCHSTRING', payload: {searchForm} });
+    setSearchForm('');
+  }
 
   return (
-      <form className={styles.searchForm}>
+      <form onSubmit={handleSubmit} className={styles.searchForm}>
           <TextInput placeholder="Search…" />
           <Button>
-            <span className="fa fa-search" />
+            <span type="text" value={searchForm} onChange={eve => setSearchForm(eve.target.value)} className="fa fa-search" />
           </Button>
       </form>
   );
