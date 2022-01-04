@@ -12,15 +12,15 @@ const SearchForm = () => {
 
   const handleSubmit = eve => {
     eve.preventDefault();
-    dispatch({ type: 'UPDATE_SEARCHSTRING', payload: {searchForm} });
+    dispatch({ type: 'UPDATE_SEARCHSTRING', payload: searchForm });
     setSearchForm('');
   }
 
   return (
       <form onSubmit={handleSubmit} className={styles.searchForm}>
-          <TextInput placeholder="Search…" />
+          <TextInput onChange={eve => setSearchForm(eve.target.value)} placeholder="Search…" />
           <Button>
-            <span type="text" value={searchForm} onChange={eve => setSearchForm(eve.target.value)} className="fa fa-search" />
+            <span type="text" value={searchForm}  className="fa fa-search" />
           </Button>
       </form>
   );
