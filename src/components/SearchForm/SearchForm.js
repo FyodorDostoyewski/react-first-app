@@ -3,7 +3,7 @@ import TextInput from '../TextInput/TextInput.js';
 import Button from '../Button/Button.js';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-
+import  { updateSearchstring } from '../../redux/store';
 
 const SearchForm = () => {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ const SearchForm = () => {
 
   const handleSubmit = eve => {
     eve.preventDefault();
-    dispatch({ type: 'UPDATE_SEARCHSTRING', payload: searchForm });
+    dispatch(updateSearchstring(searchForm));
     setSearchForm('');
   }
 
