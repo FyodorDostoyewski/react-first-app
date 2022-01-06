@@ -1,13 +1,13 @@
 import { createStore } from 'redux';
 import initialState from './initialState';
 import shortid from 'shortid';
-import strContains from '../utils/strContains.js'
+import { strContains } from '../utils/strContains.js'
 //selectors
   // export const getFilteredCards = ({ cards, searchString }, columnId) => cards
   // .filter(card => card.columnId === columnId && card.title.toLowerCase().includes(searchString.toLowerCase()));
 
   export const getAllColumns = (state => state.columns);
-  
+
   export const getFilteredCards = ({ cards, searchString }, columnId) => cards
   .filter(card => card.columnId === columnId && strContains(card.title, searchString));
 
