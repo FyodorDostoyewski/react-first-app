@@ -1,6 +1,6 @@
 import styles from './NavBar.module.scss'
-import Container from '../Container/Container.js';
-import { Link } from 'react-router';
+
+import { Link } from 'react-router-dom';
 
 
 
@@ -9,14 +9,15 @@ const NavBar = () => {
 
     <nav className={styles.NavBar}>
 
-       <Container>
+
        <span className="fa fa-tasks"  />
-       <ul>
-        <link className={styles.link} to={"./Home"}><li>Favorite</li></link>
-        <link className={styles.link} to={"./Favorite"}><li>Favorite</li></link>
-        <link className={styles.link} to={"./About"}><li>Favorite</li></link>
-      </ul>
-       </Container>
+
+
+        <Link className={styles.link} to={"./Home"}>Home</Link>
+        <Link className={styles.link} to={"./Favorite"}>Favorite</Link>
+        <Link className={styles.link} to={"./About"}>About</Link>
+    
+
     </ nav>
    );
 };
