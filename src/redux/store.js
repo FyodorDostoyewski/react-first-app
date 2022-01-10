@@ -16,6 +16,8 @@ import { strContains } from '../utils/strContains.js'
   export const getColumnsByList = ({ columns, searchString }, lists) => columns
   .filter(column => column.lists === lists && strContains(column.title, searchString));
 
+  export const getAllLists = (state => state.lists);
+
   // action creators
   export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
   export const addCard = payload => ({ type: 'ADD_CARD', payload });
