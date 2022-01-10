@@ -8,19 +8,20 @@
   margin: 0 auto;
   padding-right: 100px;
   &:first-child {
-
     font-size: 24px;
     padding-left: 20px;
     padding-top: 20px;
-
   }
 }
 
-
 .link {
-  
+
   font-size: 15px;
   color: white;
   padding: 0 10px 0 0;
   text-decoration: none;
+}
+
+.linkActive {
+  color: $color-warning;
 }
