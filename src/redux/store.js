@@ -14,7 +14,7 @@ import { strContains } from '../utils/strContains.js'
   export const getListById = ({ lists }, listId) => lists.find(list => list.id === listId)
 
   export const getColumnsByList = ({ columns, searchString }, lists) => columns
-  .filter(column => column.lists === lists && strContains(column.title, searchString));
+  .filter(column => column.lists === lists && strContains(column.listId, searchString));
 
   export const getAllLists = (state => state.lists);
 

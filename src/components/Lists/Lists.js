@@ -11,7 +11,7 @@ return (
   <section className={styles.lists}>
     <h2 className={styles.heading}>Browse lists</h2>
     {lists.map(list => (
-      <Link key={list.id = 1} to="/list/1" className={styles.listLink}>
+      <Link key={list.id} to="/list/1" className={styles.listLink}>
         <h3>{list.title}</h3>
         <p>{list.description}</p>
       </Link>
