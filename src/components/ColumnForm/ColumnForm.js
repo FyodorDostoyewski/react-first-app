@@ -10,11 +10,11 @@ const ColumnForm = props => {
   const [icon, setIcon] = useState('');
   const handleSubmit = e => {
   e.preventDefault();
-  dispatch(addColumn({ title, icon }));
+  dispatch(addColumn({ title, icon, listId:props.listId }));
   setTitle('');
   setIcon('');
 };
-console.log(componentStyle.columnForm);
+
 	return (
     <form className={componentStyle.columnForm} onSubmit={handleSubmit}>
     Title: <input type="text" value={title} onChange={e => setTitle(e.target.value)} />

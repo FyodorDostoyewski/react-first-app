@@ -5,13 +5,13 @@ import {  Link } from 'react-router-dom';
 
 const Lists = () => {
 
-const lists = useSelector(state => getAllLists(state, 1));
+const lists = useSelector(state => getAllLists(state));
 
 return (
   <section className={styles.lists}>
     <h2 className={styles.heading}>Browse lists</h2>
     {lists.map(list => (
-      <Link key={list.id} to="/list/1" className={styles.listLink}>
+      <Link key={list.id} to={"/list/" + list.id} className={styles.listLink}>
         <h3>{list.title}</h3>
         <p>{list.description}</p>
       </Link>
@@ -21,16 +21,3 @@ return (
 }
 
 export default Lists;
-// <nav className={styles.NavBar}>
-//
-//
-//    <span className="fa fa-tasks"  />
-//
-//
-//     <li><NavLink className={({ isActive }) => isActive && styles.linkActive} to="/">Home</NavLink></li>
-//     <li><NavLink className={({ isActive }) => isActive && styles.linkActive} to={"./Favorite"}>Favorite</NavLink></li>
-//     <li><NavLink className={({ isActive }) => isActive && styles.linkActive} to={"./About"}>About</NavLink></li>
-//
-//
-//
-// </ nav>

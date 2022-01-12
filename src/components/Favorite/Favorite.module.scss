@@ -13,4 +13,11 @@
 
 .title + .subtitle {
   margin-top: (- $base-size * 3);
+  background-color: black;
+  color: black;
+}
+
+.cards {
+  color: black;
+  background-color: black;
 }
