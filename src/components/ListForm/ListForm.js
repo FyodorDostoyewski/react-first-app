@@ -2,7 +2,7 @@ import styles from '../Button/Button.module.scss';
 import componentStyle from './ListForm.module.scss';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import  { addList } from '../../redux/store';
+import  { addList } from '../../redux/listsRedux.js';
 
 const ListForm = props => {
   const dispatch = useDispatch();
