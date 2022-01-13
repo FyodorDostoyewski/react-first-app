@@ -1,8 +1,31 @@
 import styles from './Card.module.scss';
+import { removerCards, getFavoriteCards  } from '../../redux/cardsRedux';
+import { useDispatch } from 'react-redux';
 
 const Card = props => {
+
+const dispatch = useDispatch();
+const handleClick = e => {
+    e.preventDefault();
+    dispatch(removerCards({cardId: props.cardId}))
+};
+const handleClickFavorite = e => {
+    e.preventDefault();
+    dispatch(removerCards({cardId: props.cardId}))
+};
+
+
     return (
-        <li className={styles.card}>{props.title}</li>
+    <ul className={styles.card}>{props.title}
+      <li onSubmit={handleClick}>
+        <button className={styles.icon + 'fa-trash'} onClick={(e) => removerCards(props.cardId)}></button>
+      </li>
+      <li onSubmit={handleClickFavorite}>
+        <button className={styles.icon +'fa-star-o'} onClick={(e) => getFavoriteCards(props.cardId)}></button>
+      </li>
+    </ul>
+
+
     );
 };
 

@@ -1,3 +1,4 @@
+
 @import '../../styles/settings.scss';
 
 .card {
@@ -10,4 +11,13 @@
     display: flex;
     justify-content: space-between;
     font-weight: bold;
+}
+
+.icon {
+  padding-right: 10px;
+  color: black;
+  font-size: 15px;
+  vertical-align: middle;
+  position: relative;
+
 }
