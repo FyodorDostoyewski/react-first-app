@@ -9,6 +9,7 @@ const handleClick = e => {
     e.preventDefault();
     dispatch(removerCards({cardId: props.cardId}))
 };
+
 const handleClickFavorite = e => {
     e.preventDefault();
     dispatch(removerCards({cardId: props.cardId}))
@@ -18,10 +19,10 @@ const handleClickFavorite = e => {
     return (
     <ul className={styles.card}>{props.title}
       <li onSubmit={handleClick}>
-        <button className={styles.icon + 'fa-trash'} onClick={(e) => removerCards(props.cardId)}></button>
+        <button className={styles.icon + ' fa-trash'} onClick={(e) => removerCards(props.cardId)}></button>
       </li>
       <li onSubmit={handleClickFavorite}>
-        <button className={styles.icon +'fa-star-o'} onClick={(e) => getFavoriteCards(props.cardId)}></button>
+        <button className={styles.icon +' fa-star-o'} onClick={(e) => getFavoriteCards(props.cardId)}></button>
       </li>
     </ul>
 
